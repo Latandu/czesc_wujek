@@ -53,18 +53,61 @@ void sendmorsecode (int isdot) {
     
 }
 // the loop function runs over and over again forever
-void loop() {
-  sendmorsecode (0); sendmorsecode (1); sendmorsecode (0); sendmorsecode (1);
-  sendmorsecode (0); sendmorsecode (0); sendmorsecode (1); sendmorsecode (1);
-  sendmorsecode (1);
-  sendmorsecode (1); sendmorsecode (1); sendmorsecode (1);
-  sendmorsecode (0); sendmorsecode (1); sendmorsecode (0); sendmorsecode (1);
-  delay(SPACJA);
-  sendmorsecode (1); sendmorsecode (0); sendmorsecode (0);
-  sendmorsecode (1); sendmorsecode (1); sendmorsecode (0);
-  sendmorsecode (1); sendmorsecode (0); sendmorsecode (0); sendmorsecode (0);
-  sendmorsecode (1);
-  sendmorsecode (0); sendmorsecode (1); sendmorsecode (0);
-  
-delay(DLUGA);
+void sendmorsechar (int islet) { //CZESC
+ switch (islet){
+  case 'a' : {
+   sendmorsecode (0); sendmorsecode (1); sendmorsecode (0); sendmorsecode (1);
+  }
+  break;
+  case 'b' : {
+    sendmorsecode (0); sendmorsecode (0); sendmorsecode (1); sendmorsecode (1);;
+  }
+  break;
+  case 'c' : {
+    sendmorsecode (1);
+    
+    }
+  break;
+  case 'd' : {
+    sendmorsecode (1); sendmorsecode (1); sendmorsecode (1);
+    }
+
+  case 'e' : {
+     sendmorsecode (0); sendmorsecode (1); sendmorsecode (0); sendmorsecode (1);
+    }
+  break;
+ }
 }
+void sendmorsechar2 (int islet){ //WUJEK
+  switch (islet){
+  case 'a' : {
+    sendmorsecode (1); sendmorsecode (0); sendmorsecode (0);
+    }
+  break;
+  case 'b' : {
+     sendmorsecode (1); sendmorsecode (1); sendmorsecode (0);
+    }
+  break;
+  case 'c' : {
+    sendmorsecode (1); sendmorsecode (0); sendmorsecode (0); sendmorsecode (0);
+    }
+  break;
+  case 'd' : {
+    sendmorsecode (1);
+    }
+  break;
+  case 'e' : {
+    sendmorsecode (0); sendmorsecode (1); sendmorsecode (0);
+    }
+ }
+ 
+}
+void loop () {
+  sendmorsechar('a'); sendmorsechar('b'); sendmorsechar('c'); sendmorsechar ('d'); sendmorsechar ('e'); //CZESC
+  delay(SPACJA);
+  sendmorsechar2('a'); sendmorsechar2('b'); sendmorsechar2('c'); sendmorsechar2 ('d'); sendmorsechar2 ('e'); //WUJEK
+  delay(DLUGA);
+  }
+ 
+ 
+ 
