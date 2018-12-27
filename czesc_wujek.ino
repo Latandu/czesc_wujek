@@ -36,65 +36,70 @@ void sendmorsecode (int isdot) {
   switch (isdot){
     case 0 : {
     digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-    delay(KRESKA);                       // wait for a second
+    delay(KRESKA);                       //Przerwa
     digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
     delay(PRZERWA);
     }
     break;
     case 1 : {
     digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-    delay(KROPKA);                       // wait for a second
+    delay(KROPKA);                       //Przerwa
     digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
     delay(PRZERWA);
     }
-    break;
-   
-  }
-    
+    break; 
+  }  
 }
-// the loop function runs over and over again forever
-void sendmorsechar (int islet) { //CZESC
+void sendmorsechar (unsigned char islet) { 
  switch (islet){
   case 'c' : {
-   sendmorsecode (0); sendmorsecode (1); sendmorsecode (0); sendmorsecode (1);
-  }
+     sendmorsecode (0); sendmorsecode (1); sendmorsecode (0); sendmorsecode (1);
+    }
   break;
-  case 'z' : {
-    sendmorsecode (0); sendmorsecode (0); sendmorsecode (1); sendmorsecode (1);;
-  }
-  break;
+
   case 'e' : {
-    sendmorsecode (1);
-    
+      sendmorsecode (1); 
     }
   break;
-  case 's' : {
-    sendmorsecode (1); sendmorsecode (1); sendmorsecode (1);
-    }
-  case 'w' : {
-    sendmorsecode (1); sendmorsecode (0); sendmorsecode (0);
-    }
-  break;
-  case 'u' : {
-     sendmorsecode (1); sendmorsecode (1); sendmorsecode (0);
-    }
-  break;
+  
   case 'j' : {
     sendmorsecode (1); sendmorsecode (0); sendmorsecode (0); sendmorsecode (0);
     }
   break;
+  
   case 'k' : {
     sendmorsecode (0); sendmorsecode (1); sendmorsecode (0);
     }
- }
- 
-}
-void loop () {
-  sendmorsechar('c'); sendmorsechar('z'); sendmorsechar('e'); sendmorsechar ('s'); sendmorsechar ('c'); //CZESC
-  delay(SPACJA);
-  sendmorsechar('w'); sendmorsechar('u'); sendmorsechar('j'); sendmorsechar ('e'); sendmorsechar ('k'); //WUJEK
-  delay(DLUGA);
+  
+  case 's' : {
+    sendmorsecode (1); sendmorsecode (1); sendmorsecode (1);
+    }
+    
+    case 'u' : {
+     sendmorsecode (1); sendmorsecode (1); sendmorsecode (0);
+    }
+  break;
+  
+  case 'w' : {
+    sendmorsecode (1); sendmorsecode (0); sendmorsecode (0);
+    }
+  break;
+  
+  case 'z' : {
+    sendmorsecode (0); sendmorsecode (0); sendmorsecode (1); sendmorsecode (1);
   }
- 
- 
- 
+  break;
+ }
+}
+
+void loop () { //petla
+  sendmorsechar('c'); sendmorsechar('z'); sendmorsechar('e'); sendmorsechar ('s'); sendmorsechar ('c'); //CZESC
+  
+  delay(SPACJA);
+  
+  sendmorsechar('w'); sendmorsechar('u'); sendmorsechar('j'); sendmorsechar ('e'); sendmorsechar ('k'); //WUJEK
+  
+  delay(DLUGA);
+  
+  }
+ //KONIEC
