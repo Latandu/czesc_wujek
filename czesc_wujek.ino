@@ -1,4 +1,4 @@
-/*
+u/*
   Blink
 
   Turns an LED on for one second, then off for one second, repeatedly.
@@ -50,8 +50,8 @@ void sendmorsecode (int isdot) {
     break; 
   }  
 }
-void sendmorsechar (unsigned char islet) { 
- switch (islet){
+void sendmorsechar (unsigned char letter) { 
+ switch (letter){
   case 'c' : {
      sendmorsecode (0); sendmorsecode (1); sendmorsecode (0); sendmorsecode (1);
     }
