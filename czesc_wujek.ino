@@ -55,57 +55,53 @@ void sendmorsecode (int isdot) {
 // the loop function runs over and over again forever
 void sendmorsechar (int islet) { //CZESC
  switch (islet){
-  case 'a' : {
+  case 'c' : {
    sendmorsecode (0); sendmorsecode (1); sendmorsecode (0); sendmorsecode (1);
   }
   break;
-  case 'b' : {
+  case 'z' : {
     sendmorsecode (0); sendmorsecode (0); sendmorsecode (1); sendmorsecode (1);;
   }
   break;
-  case 'c' : {
+  case 'e' : {
     sendmorsecode (1);
     
     }
   break;
-  case 'd' : {
+  case 's' : {
     sendmorsecode (1); sendmorsecode (1); sendmorsecode (1);
     }
-
-  case 'e' : {
-     sendmorsecode (0); sendmorsecode (1); sendmorsecode (0); sendmorsecode (1);
-    }
-  break;
- }
+  }
+ 
 }
 void sendmorsechar2 (int islet){ //WUJEK
   switch (islet){
-  case 'a' : {
+  case 'w' : {
     sendmorsecode (1); sendmorsecode (0); sendmorsecode (0);
     }
   break;
-  case 'b' : {
+  case 'u' : {
      sendmorsecode (1); sendmorsecode (1); sendmorsecode (0);
     }
   break;
-  case 'c' : {
+  case 'j' : {
     sendmorsecode (1); sendmorsecode (0); sendmorsecode (0); sendmorsecode (0);
     }
   break;
-  case 'd' : {
+  case 'e' : {
     sendmorsecode (1);
     }
   break;
-  case 'e' : {
+  case 'k' : {
     sendmorsecode (0); sendmorsecode (1); sendmorsecode (0);
     }
  }
  
 }
 void loop () {
-  sendmorsechar('a'); sendmorsechar('b'); sendmorsechar('c'); sendmorsechar ('d'); sendmorsechar ('e'); //CZESC
+  sendmorsechar('c'); sendmorsechar('z'); sendmorsechar('e'); sendmorsechar ('s'); sendmorsechar ('c'); //CZESC
   delay(SPACJA);
-  sendmorsechar2('a'); sendmorsechar2('b'); sendmorsechar2('c'); sendmorsechar2 ('d'); sendmorsechar2 ('e'); //WUJEK
+  sendmorsechar2('w'); sendmorsechar2('u'); sendmorsechar2('j'); sendmorsechar2 ('e'); sendmorsechar2 ('k'); //WUJEK
   delay(DLUGA);
   }
  
