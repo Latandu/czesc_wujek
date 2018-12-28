@@ -9,23 +9,11 @@ void setup() {
   // initialize digital pin LED_BUILTIN as an output.
   pinMode(LED_BUILTIN, OUTPUT);
 }
-void sendmorsecode (int isdot) {
-  switch (isdot){
-    case 0 : {
-    digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-    delay(KRESKA);                       //Przerwa
+void sendmorsecode (int isdot){
+    digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level
+    delay((isdot==0)?KRESKA:KROPKA);           
     digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
     delay(PRZERWA);
-    }
-    break;
-    case 1 : {
-    digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-    delay(KROPKA);                       //Przerwa
-    digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-    delay(PRZERWA);
-    }
-    break; 
-  }  
 }
 void sendmorsechar (unsigned char letter) { 
  switch (letter){
